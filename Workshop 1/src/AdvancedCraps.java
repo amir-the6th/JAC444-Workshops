@@ -1,9 +1,23 @@
+/**********************************************
+Workshop #1
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-09-26
+**********************************************/
+
 import java.util.Scanner;
 
 public class AdvancedCraps {
 	static int die1, die2, round;
 	static double bankBalance = 1000.00;
 	
+	/**
+	 * This method rolls the dice (generates a random number between 1 - 6)
+	 * @return rolledNum -> returns the randomly generated number
+	 */
 	public static int roll() {
 		int rolledNum = (int)((Math.random() * 6) + 1);
 		 //die1 = (int)((Math.random() * 6) + 1);
@@ -11,12 +25,19 @@ public class AdvancedCraps {
 		return rolledNum;
 	}
 	
+	/**
+	 * This method prompts the user to continue the program by pressing the Enter key
+	 */
 	public void promptEnterKey(){
 		   System.out.println("Press \"ENTER\" to continue...");
 		   Scanner scanner = new Scanner(System.in);
 		   scanner.nextLine();
 	}
 	
+	/**
+	 * main method: Advanced Craps Game
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		int sum, sum2;
 		Craps c = new Craps();
