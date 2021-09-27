@@ -70,8 +70,8 @@ public class AdvancedCraps {
 				    bankBalance -= wager;
 					System.out.println("Your current balance is: " + bankBalance);
 					if(bankBalance <= 0) {
-						System.out.println("Sorry You Got Busted!");
-						break;
+						System.out.println("Sorry, You Got Busted!\nCome back later with more cash.");
+						return;
 					}
 					//////////////////////
 					System.out.print("Do you want to play again?\n1. Yes\n2. No\nSelection: ");
@@ -111,8 +111,8 @@ public class AdvancedCraps {
 							bankBalance -= wager;
 							System.out.println("Your current balance is: " + bankBalance);
 							if(bankBalance <= 0) {
-								System.out.println("Sorry You Got Busted!");
-								break;
+								System.out.println("Sorry You Got Busted!\nCome back later with more cash.");
+								return;
 							}
 							break;
 						}
