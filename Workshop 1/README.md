@@ -15,3 +15,29 @@ Write a separate application that inputs an encrypted four-digit integer and dec
 
 [Optional reading project: Research “public key cryptography” in general and the PGP (Pretty Good Privacy) specific public key scheme.
 You may also want to investigate the RSA scheme, which is widely used in industrial-strength applications.]
+
+
+## Craps
+This task is required to create Craps, which is a popular dice game played in casinos. You are supposed to write a program to play a variation of the game, as follows:
+
+ - Roll two dice. (Each roll should produce two random numbers between 1 to 6)
+ - Each die has six faces representing values 1, 2, …, and 6, respectively
+ - Check the sum of the two dice. If the sum is 2, 3, or 12 (your program should display craps), you lose the game
+ - If the sum of the two dice is 7 or 11 (your program should display naturals), you win the game
+ - If the sum of two dice is any value (i.e., 4, 5, 6, 8, 9, or 10), your program should establish a point in the game (meaning store that sum). Continue to roll the dice until the sum is either a 7 or the same point value which was established. If rolled sum is 7, you lose the game. Otherwise, if the rolled sum is equal to established point you win.
+
+
+## AdvancedCraps
+Modify the craps program from above to allow wagering.
+
+ - Initialize variable bankBalance to 1000 dollars
+ - Prompt the player to enter a wager
+ - Check that wager is less than or equal to bankBalance, and if it’s not, have the user reenter wager until a valid wager is entered
+ - Then, run one game of craps
+ - If the player wins, increase bankBalance by wager and display the new bankBalance
+ - If the player loses, decrease bankBalance by wager, display the new bank-Balance, check whether bankBalance has become zero and, if so, display the message "Sorry. You busted!"
+ - As the game progresses, display various messages to create some “chatter,” such as
+	"Oh, you’re going for broke, huh?" or
+	"Aw c’mon, take a chance!" or
+	"You’re up big. Now’s the time to cash in your chips!".
+ - Implement the “chatter” as a separate method that randomly chooses the string to display
