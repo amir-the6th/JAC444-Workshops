@@ -1,0 +1,11 @@
+/**********************************************
+Workshop #1
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-09-26
+**********************************************/
+
+This week, I learned the concepts of classes, objects methods, and arrays in Java. As the definition of class differs a little in Java than in C++, it took me a while to comprehend the meaning and usage of a class in a Java program. I also investigated and learned about similar definitions such as methods and objects and adjusted my understandings from what I learned in C and C++. As well as the basic concepts, I also learned about the built-in methods and utilities that Java offers and make use of them in Workshop 1. The concept of static keyword interested me the most. I learned why there are used, in which situations are better to apply, and what is the correct syntax to use them.
