@@ -1,4 +1,12 @@
-
+/**********************************************
+Workshop #2
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-10-05
+**********************************************/
 public class IncomeTax {
 	static final int SINGLE_FILER = 0;
 	static final int MARRIED_JOINTLY_OR_QUALIFYING_WIDOW = 1;
@@ -19,11 +27,11 @@ public class IncomeTax {
 		};
 		setIntervals(defaultIntervals);
 	}
-	public IncomeTax(int filingStatus, int[][] intervals, double[] rates, double ti) {
-		setFilingStatus(filingStatus);
+	public IncomeTax(int[][] intervals, double[] rates) {
+		//setFilingStatus(filingStatus);
 		setIntervals(intervals);
 		setRates(rates);
-		setTaxableIncome(ti);
+		//setTaxableIncome(ti);
 	}
 	public int getFilingStatus() {
 		return filingStatus;
@@ -50,15 +58,27 @@ public class IncomeTax {
 		this.taxableIncome = ti;
 	}
 	public double getIncomeTax() {
-		double tax;
-		if(taxableIncome <= intervals[getFilingStatus()][0]) {
+		double inc = taxableIncome, tax = 0, taxedIncome;
+		tax += intervals[filingStatus][0] * rates[0];
+		for (int i = rates.length - 2; i >= 0; i--) {
+			if (inc > intervals[filingStatus][i]) {
+				taxedIncome = inc - intervals[filingStatus][i];
+				tax += taxedIncome * rates[i + 1];
+				inc -= taxedIncome;
+			}
+		}
+		return tax;
+		/*
+		if(taxableIncome <= intervals[filingStatus][0]) {
 			tax = taxableIncome * rates[0];
 		}
 		else {
 			tax = intervals[filingStatus][0] * rates[0];
 	        for (int i = 1; i < intervals[filingStatus].length; i++) {
 	        	if (taxableIncome > intervals[filingStatus][i]) {
-	                tax += (intervals[filingStatus][i] - intervals[filingStatus][i - 1]) * rates[i];
+	                //tax += (intervals[filingStatus][i] - intervals[filingStatus][i - 1]) * rates[i];
+	        		tax += (taxedIncome = taxableIncome - intervals[filingStatus][i]) * rates[i + 1];
+	        		taxableIncome -= taxedIncome;
 	        	}
 	        	else {
 	        		tax += (taxableIncome - intervals[filingStatus][i - 1]) * rates[i];
@@ -67,5 +87,6 @@ public class IncomeTax {
 		}
 		tax += (taxableIncome - intervals[filingStatus][4]) * rates[5];
 		return tax;
+		*/
 	}
 }
