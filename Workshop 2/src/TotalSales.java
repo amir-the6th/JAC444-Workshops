@@ -1,16 +1,19 @@
-
+/**********************************************
+Workshop #2
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-10-05
+**********************************************/
 public class TotalSales {
+	/**
+	 * main method: Calculate Total Sales Program
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SalesSlip ss = new SalesSlip();
-		// generate a number between 0 - 3 to set the sales person
-		// remember sales person #1 possess index 0 in the array
-		ss.setSalesPerson((int)(Math.random() * 4));
-		// generate a number between 0 - 4 to set the product
-		ss.setProduct((int)(Math.random() * 5));
-		// generate a number between 0 - 5000 to set the dollar value
-		ss.setValue((int)((Math.random() * 5000) +1));
-		ss.setSlip(ss.getSalesPerson(), ss.getProduct(), ss.getValue());
-		
-		
+		ss.display();
 	}
 }
