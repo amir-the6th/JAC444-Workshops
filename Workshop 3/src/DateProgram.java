@@ -2,27 +2,36 @@ import java.util.Scanner;
 
 public class DateProgram {
 	public static void main(String[] args) {
-		int dd, mm, yyyy, dOfYear;
-		String mName;
-		Scanner scan = new Scanner(System.in);
 		welcomeHeader();
 		mainMenu();
-		int ch = scan.nextInt();
+		runMenu();
+	}
+	public static void runMenu() {
+		int dd, mm, yyyy, dOfYear, ch = 0;
+		String mName;
+		Scanner scan = new Scanner(System.in);
+		DateUtilities du = new DateUtilities();
+		ch = du.promptInteger();
 		switch(ch) {
 		case 1:
-			System.out.print("Enter Month(1-12): ");
-			mm = scan.nextInt();
-			System.out.print("Enter Day of Month: ");
-			dd = scan.nextInt();
 			System.out.print("Enter Year: ");
-			yyyy = scan.nextInt();
+			yyyy = du.promptInteger();
+			yyyy = du.validateYear(yyyy);
+			
+			System.out.print("Enter Month(1-12): ");
+			mm = du.promptInteger();
+			mm = du.validateMonth(mm);
+			
+			System.out.print("Enter Day of Month: ");
+			dd = du.promptInteger();
+			dd = du.validateDay(dd, mm, yyyy);
+			
 			Date date1 = new Date(dd,mm,yyyy);
-			scan.nextLine();
 			displayDates(date1);
 			break;
 		case 2:
 			System.out.print("Enter Month(January - December): ");
-			mName = scan.next();
+			mName = du.promptString();
 			System.out.print("Enter Day of Month: ");
 			dd = scan.nextInt();
 			System.out.print("Enter Year: ");
@@ -44,8 +53,12 @@ public class DateProgram {
 			System.out.println("Thank you for using our program. Goodbye!");
 			System.exit(0);
 			break;
+		case 0:
+			break;
 		default:
-			System.out.println("WRONG CHOICE! only 1, 2, 3, or 4 are valid.");
+			System.out.println("WRONG CHOICE! only 1, 2, 3, or 4 are valid.\n");
+			mainMenu();
+			runMenu();
 			break;
 		}
 		
