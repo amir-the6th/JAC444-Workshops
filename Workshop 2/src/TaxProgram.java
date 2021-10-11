@@ -167,13 +167,14 @@ public class TaxProgram {
 	 */
 	public static boolean runAgain() {
 		boolean again;
-		Scanner againScan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 		System.out.print("\nDo you want to try our program another time?\n1. Yes\n2. No\nSelection: ");
-		byte input = againScan.nextByte();
+		byte input = scan.nextByte();
+		scan.nextLine();
 		while (input != 1 && input != 2) {
 			System.out.println("\n*** INCORRECT SELECTION! ***\n");
 			System.out.print("Selection: ");
-			input = againScan.nextByte();
+			input = scan.nextByte();
 		}
 		if(input == 1) {
 			again = true;
@@ -182,7 +183,7 @@ public class TaxProgram {
 			System.out.println("Thank you for using our program. Goodbye!");
 			again = false;
 		}
-		againScan.nextLine();
+		
 		return again;
 	}		
 }
