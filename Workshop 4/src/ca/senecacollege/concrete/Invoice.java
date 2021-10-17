@@ -12,7 +12,9 @@ package ca.senecacollege.concrete;
 import ca.senecacollege.interfaces.Payable;
 
 /**
- * @author amirs
+ * Class: Invoice
+ * Implement Payable interface
+ * @author Amir
  *
  */
 public class Invoice implements Payable {
@@ -20,13 +22,28 @@ public class Invoice implements Payable {
 	private int quantity;
 	private double pricePerItem;
 	
-	public Invocie() {
-		
+	/**
+	 * Four-arg constructor
+	 * @param partNumber
+	 * @param partDescription
+	 * @param quantity
+	 * @param pricePerItem
+	 */
+	public Invoice(String partNum, String partDesc, int q, double pricePI) {
+		this.partNumber = partNum;
+		this.partDescription = partDesc;
+		this.quantity = q;
+		this.pricePerItem = pricePI;
 	}
+	
+	/**
+	 * Getters
+	 * @return partNumber, partDescription, quantity, pricePerItem
+	 */
 	public String getPartNumber() {
 		return partNumber;
 	}
-	public String getPartDecription() {
+	public String getPartDescription() {
 		return partDescription;
 	}
 	public int getQuantity() {
@@ -35,6 +52,11 @@ public class Invoice implements Payable {
 	public double getPricePerItem() {
 		return pricePerItem;
 	}
+	
+	/**
+	 * Setters
+	 * Sets partNumber, partDescription, quantity, pricePerItem
+	 */
 	public void setPartNumber(String str) {
 		this.partNumber = str;
 	}
@@ -47,10 +69,24 @@ public class Invoice implements Payable {
 	public void setPricePerItem(double num) {
 		this.pricePerItem = num;
 	}
-
+	
+	/**
+	 * @return the cost of the invoice
+	 */
 	@Override
 	public double getPaymentAmount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return quantity * pricePerItem;
 	}
+
+	/**
+	 * @return String representation of Invoice Object
+	 */
+	public String toString() {
+		return "Invoice [partNumber= " + partNumber + 
+				  "/ partDescription= " + partDescription + 
+				  "/ quantity= " + quantity + 
+				  "/ pricePerItem= " + pricePerItem + 
+				  "/ getPaymentAmount()= " + getPaymentAmount() + "]";
+	}
+	
 }
