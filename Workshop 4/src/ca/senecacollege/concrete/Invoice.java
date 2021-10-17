@@ -15,12 +15,12 @@ import ca.senecacollege.interfaces.Payable;
  * @author amirs
  *
  */
-public class Invocie implements Payable {
+public class Invoice implements Payable {
 	private String partNumber, partDescription;
 	private int quantity;
 	private double pricePerItem;
 	
-	public void Invoice {
+	public Invocie() {
 		
 	}
 	public String getPartNumber() {
