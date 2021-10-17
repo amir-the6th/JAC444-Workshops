@@ -72,6 +72,14 @@ public class CommissionEmployee extends Employee {
 	}
 	
 	/**
+	 * Calculate the commission based salary.
+	 */
+	@Override
+	public double getPaymentAmount() {
+		return getGrossSales() * getCommissionRate();
+	}
+	
+	/**
 	 * @return String representation of CommissionEmployee Object
 	 */
 	@Override
@@ -80,8 +88,4 @@ public class CommissionEmployee extends Employee {
 				                "/ Comission Rate: " + getCommissionRate() + "]";
 	}
 
-	@Override
-	public double getPaymentAmount() {
-		return getGrossSales() * getCommissionRate();
-	}
 }
