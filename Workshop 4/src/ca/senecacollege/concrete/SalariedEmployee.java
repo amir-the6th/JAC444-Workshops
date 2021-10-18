@@ -59,16 +59,19 @@ public class SalariedEmployee extends Employee {
 	}
 	
 	/**
+	 * @return weeklySalary
+	 */
+	@Override
+	public double getPaymentAmount() {
+		return getWeeklySalary();
+	}
+	
+	/**
 	 * @return String representation of SalariedEmployee Object
 	 */
 	@Override
 	public String toString() {
 		return super.toString() + "\n Salaried Employee [Weekly Salary: $" + getWeeklySalary() + "]";
-	}
-	
-	@Override
-	public double getPaymentAmount() {
-		return getWeeklySalary();
 	}
 
 }
