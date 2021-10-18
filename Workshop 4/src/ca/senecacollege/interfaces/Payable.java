@@ -10,7 +10,8 @@ Date:2021-10-17
 package ca.senecacollege.interfaces;
 
 /**
- * @author amirs
+ * Interface: Payable
+ * @author Amir
  *
  */
 public interface Payable {
