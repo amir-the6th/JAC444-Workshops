@@ -21,6 +21,7 @@ public class Invoice implements Payable {
 	private String partNumber, partDescription;
 	private int quantity;
 	private double pricePerItem;
+	private static int invoiceNo;
 	
 	/**
 	 * Four-arg constructor
@@ -34,11 +35,12 @@ public class Invoice implements Payable {
 		this.partDescription = partDesc;
 		this.quantity = q;
 		this.pricePerItem = pricePI;
+		invoiceNo++;
 	}
 	
 	/**
 	 * Getters
-	 * @return partNumber, partDescription, quantity, pricePerItem
+	 * @return partNumber, partDescription, quantity, pricePerItem, invoiceNo
 	 */
 	public String getPartNumber() {
 		return partNumber;
@@ -51,6 +53,9 @@ public class Invoice implements Payable {
 	}
 	public double getPricePerItem() {
 		return pricePerItem;
+	}
+	public int getInvoiceNo() {
+		return invoiceNo;
 	}
 	
 	/**
@@ -82,11 +87,10 @@ public class Invoice implements Payable {
 	 * @return String representation of Invoice Object
 	 */
 	public String toString() {
-		return "Invoice [partNumber= " + partNumber + 
-				  "/ partDescription= " + partDescription + 
-				  "/ quantity= " + quantity + 
-				  "/ pricePerItem= " + pricePerItem + 
-				  "/ getPaymentAmount()= " + getPaymentAmount() + "]";
+		return "Part Number:        " + partNumber +
+			   "\n| Part Description:   " + partDescription +
+			   "\n| Quantity:           " + quantity +
+			   "\n| Price Per Item:     " + pricePerItem;
 	}
 	
 }
