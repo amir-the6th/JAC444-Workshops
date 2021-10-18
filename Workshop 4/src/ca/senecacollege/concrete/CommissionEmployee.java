@@ -84,8 +84,7 @@ public class CommissionEmployee extends Employee {
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + "\n Comission [Gross Sales: $" + getGrossSales() + 
-				                "/ Comission Rate: " + getCommissionRate() + "]";
+		return super.toString() + "\nGross Sales: $" + getGrossSales() + "\nComission Rate: " + getCommissionRate();
 	}
 
 }
