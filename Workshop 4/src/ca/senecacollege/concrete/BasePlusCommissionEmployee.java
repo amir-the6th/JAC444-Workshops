@@ -65,21 +65,15 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
 	 */
 	@Override
 	public double getPaymentAmount() {
-		/* Logic: commission based salary + base salary
-		 * 
-		 * Note:  For the current pay period, the company 
-		 * has decided to reward salaried-commission employees 
-		 * by adding 10% to their base salaries.
-		 */
-		return (getBaseSalary() * 1.1) + super.getPaymentAmount();
+		// Logic: base salary + commission based salary
+		return getBaseSalary() + super.getPaymentAmount();
 	}
 	
 	/**
-	 * @return String representation of CommissionEmployee Object
+	 * @return String representation of BasePlusCommissionEmployee Object
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + "\n Comission [Gross Sales: $" + getGrossSales() + 
-				                "/ Comission Rate: " + getCommissionRate() + "]";
+		return super.toString() + "\nBase Salary: $" + getBaseSalary();
 	}
 }
