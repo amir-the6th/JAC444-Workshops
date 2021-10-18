@@ -64,10 +64,9 @@ public abstract class Employee implements Payable {
 	 * @return String representation of Employee Object
 	 */
 	public String toString() {
-		return "Employee [First Name= " + firstName + 
-				  "/ Last Name= " + lastName + 
-				  "/ Social Security Number= " + socialSecurityNumber + 
-				  "]";
+		return "First Name: " + firstName + 
+				"\nLast Name: " + lastName + 
+				"\nSocial Security Number: " + socialSecurityNumber;
 	}
 	
 }
