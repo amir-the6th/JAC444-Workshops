@@ -1,4 +1,3 @@
-package ca.senecacollege.jserdeser;
 
 public class Account {
 
@@ -41,5 +40,13 @@ public class Account {
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-	
+	/**
+	 * Combines the balance of the Account object and the 
+	 * amount value of the TransactionRecord object.
+	 * 
+	 * @param tr -> an object of TransactionRecord class
+	 */
+	public void combine(TransactionRecord tr) {
+		this.balance += tr.getAmount();
+	}
 }
