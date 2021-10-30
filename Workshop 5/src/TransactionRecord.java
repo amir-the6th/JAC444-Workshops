@@ -12,10 +12,20 @@ public class TransactionRecord {
 	private double amount;
 
 	/**
-	 * 
+	 * no-arg constructor
+	 * sets the instance variables to a safe state
 	 */
 	public TransactionRecord() {
-		// TODO Auto-generated constructor stub
+		this(0,0.0);
+	}
+	
+	/**
+	 * 2-arg constructor
+	 * @param accNum, amt
+	 */
+	public TransactionRecord(int accNum, double amt) {
+		accountNumber = accNum;
+		amount = amt;
 	}
 	
 	public int getAccNum() {
