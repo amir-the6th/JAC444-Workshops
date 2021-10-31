@@ -46,7 +46,7 @@ public class Account {
 	 * 
 	 * @param tr -> an object of TransactionRecord class
 	 */
-	public void combine(TransactionRecord tr) {
-		this.balance += tr.getAmount();
+	public double combine(TransactionRecord tr) {
+		return this.balance += tr.getAmount();
 	}
 }
