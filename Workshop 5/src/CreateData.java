@@ -1,6 +1,12 @@
-/**
- * 
- */
+/**********************************************
+Workshop #5
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-11-01
+**********************************************/
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,12 +14,14 @@ import java.io.PrintWriter;
 
 
 /**
- * @author amirs
+ * @author Amir
  *
  */
 public class CreateData {
 
 	/**
+	 * no-arg constructor
+	 * writes sample data to oldmast.txt and trans.txt
 	 * @throws IOException 
 	 * 
 	 */
