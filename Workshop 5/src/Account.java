@@ -1,4 +1,17 @@
+/**********************************************
+Workshop #5
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-11-01
+**********************************************/
 
+/**
+ * @author Amir
+ *
+ */
 public class Account {
 
 	private int accNum;
