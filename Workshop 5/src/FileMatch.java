@@ -1,6 +1,12 @@
-/**
- * 
- */
+/**********************************************
+Workshop #5
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-11-01
+**********************************************/
 
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -10,7 +16,7 @@ import java.io.PrintWriter;
 
 
 /**
- * @author amirs
+ * @author Amir
  *
  */
 public class FileMatch {
@@ -20,6 +26,7 @@ public class FileMatch {
 	static PrintWriter outputNewMaster = null, outputLog = null;
 
 	/**
+	 * no-arg constructor
 	 * @throws IOException 
 	 * 
 	 */
@@ -38,10 +45,12 @@ public class FileMatch {
 			while ((accLine = inputAccount.readLine()) != null) {
 				Account acc = setAccountRecord(accLine);
 				
+				// when there's a master record but no corresponding transaction record 
 				while (acc.getAccNum() > tr.getAccNum()) {
 					tr = setTransactionRecord(inputTrans.readLine());
 				}  
                 
+				// when a match occurs, combine the amounts and add it to the master record
 				while (acc.getAccNum() == tr.getAccNum()){
 					acc.combine(tr);
 					if((transLine = inputTrans.readLine()) != null) {
@@ -49,27 +58,7 @@ public class FileMatch {
 					} else break;
 				}
 				
-				/*
-				while((transLine = inputTrans.readLine()) != null) {
-					String[] splitTrans = transLine.split(" ");
-					tr.setAccNum(Integer.parseInt(splitTrans[0]));
-					tr.setAmount(Double.parseDouble(splitTrans[1]));
-					
-					// When a match occurs, combine transaction and old master amounts and write a "newmast.txt" record.
-					if(tr.getAccNum() == acc.getAccNum()) {
-						System.out.printf("%nMatch found! Account %d's balance has been increased by %.2f.%n", tr.getAccNum(), tr.getAmount());
-						System.out.println("New account balance is " + acc.combine(tr));
-						outputNewMaster.println(acc.getAccNum() + " " + acc.getfName() + " " + acc.getlName() + " " + acc.getBalance());
-					}
-					
-					// When there’s a transaction record, but no corresponding master record, write a "log.txt" record. 
-					if(tr.getAccNum() != acc.getAccNum()) {
-						System.out.println("Unmatched transaction record for account number " + tr.getAccNum());
-						outputLog.println("Unmatched transaction record for account number " + tr.getAccNum());
-					}
-				}
-				*/
-				
+				// write the master record to newmast.txt
 				outputNewMaster.println(acc.getAccNum() + " " + acc.getfName() + " " + acc.getlName() + " " + acc.getBalance());
 			}	
 		}
