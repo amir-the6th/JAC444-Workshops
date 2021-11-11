@@ -104,7 +104,6 @@ public class AutoLoanCalculator extends Application {
 
 		@Override
 		public void handle(ActionEvent arg0) {
-			System.out.println("Calculating your monthly payment!");
 		}
 		
 		private String calculate(TextField cp, TextField dp, TextField air, ChoiceBox<String> ld) {
