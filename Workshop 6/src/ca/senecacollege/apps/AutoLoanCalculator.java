@@ -1,4 +1,4 @@
-package ca.senecacollege.apps;
+	package ca.senecacollege.apps;
 
 import java.text.DecimalFormat;
 
