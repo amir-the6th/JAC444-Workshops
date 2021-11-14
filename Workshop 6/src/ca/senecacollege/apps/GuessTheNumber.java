@@ -54,8 +54,7 @@ public class GuessTheNumber extends Application {
         sceneTitle.setFont(Font.font("Helvetica", FontWeight.BOLD, 20));
         grid.add(sceneTitle, 0, 0, 2, 1);
 
-        //randomNumber = new Random().nextInt(1000) + 1; //generate a random number between 1 - 1000
-        randomNumber = 500;
+        randomNumber = new Random().nextInt(1000) + 1; //generate a random number between 1 - 1000
         
         Text sceneSubTitle = new Text("I have a number between 1 and 1000. Can you guess my number?");
         sceneSubTitle.setFont(Font.font("Helvetica", FontWeight.SEMI_BOLD, 13));
