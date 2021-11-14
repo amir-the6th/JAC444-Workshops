@@ -1,3 +1,12 @@
+/**********************************************
+Workshop #6
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-11-13
+**********************************************/
 package ca.senecacollege.apps;
 
 import java.util.Random;
@@ -99,6 +108,7 @@ public class GuessTheNumber extends Application {
 				guessNumber.clear();
 				guessNumber.setEditable(true);
 				randomNumber = new Random().nextInt(1000) + 1;
+				cnt = 1;
 			}     	
         });
         //Exit Game Button Event Handler
@@ -133,22 +143,22 @@ public class GuessTheNumber extends Application {
 	private void setColor() {
 		if(cnt == 2) guessResult.setTextFill(Color.GRAY);
 		else {
-		if (userGuess > randomNumber) {
-			if ((userGuess - randomNumber) < (latestGuess - randomNumber)) {
-                guessResult.setTextFill(Color.RED);
-            }
-			else {
-        		guessResult.setTextFill(Color.BLUE);
-            }
-		}
-		else {
-			if ((randomNumber - userGuess) < (randomNumber - latestGuess)) {
-                guessResult.setTextFill(Color.RED);
+			if (userGuess > randomNumber) {
+				if ((userGuess - randomNumber) < (latestGuess - randomNumber)) {
+	                guessResult.setTextFill(Color.RED);
+	            }
+				else {
+	        		guessResult.setTextFill(Color.BLUE);
+	            }
 			}
 			else {
-        		guessResult.setTextFill(Color.BLUE);
+				if ((randomNumber - userGuess) < (randomNumber - latestGuess)) {
+	                guessResult.setTextFill(Color.RED);
+				}
+				else {
+	        		guessResult.setTextFill(Color.BLUE);
+				}
 			}
-		}
 		}
 	}
 }
