@@ -2,7 +2,6 @@ package ca.senecacollege.task1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -168,7 +167,6 @@ public class NamePopularityProgram extends Application {
 			while(read.hasNext()) {
 				line = read.nextLine();
 				String[] temp = line.split(" ");
-				System.out.println(temp[0]);
 				if(gender == "male" && isContain(temp[1],n)) { //instead of temp[1].contains(n), I declared a method to exactly match the name
 					rank = Integer.parseInt(temp[0]);
 				}
