@@ -6,58 +6,25 @@ import java.util.List;
 public class RandomNumberLinkedList {
 
 	public static void main(String[] args) {
-		int sum = 0;
-		Random r = new Random();
-		Integer[] random = new Integer[25];
+		final int MAX_RANDOM = 25;
+		int randNum = 0, sum = 0;
+		Random r = new Random();		
 		
-		for(int i = 0; i < random.length; i++) {
-			random[i] = r.nextInt(100) + 1;
-		}
 		
 		final List<Integer> randomList = new LinkedList<Integer>();
-
-		
-
-		int randnum;
-
-
-
-		for(int i = 0;i<25;i++) {
-			randnum = r.nextInt(101);
-			randomList.add(new Integer(randnum));    
-			sum+=randnum;
+		for(int i = 0; i < MAX_RANDOM; i++) {
+			randNum = r.nextInt(100) + 1;
+			randomList.add(randNum);
+			sum += randNum;
 		}
 
-		Collections.sort(randomList);
-
+		System.out.println("\nBefore Sort:");
 		System.out.println(randomList);
 
-		System.out.println("Average: "+(float)sum/25);
+		System.out.println("\nAfter Sort:");
+		Collections.sort(randomList);
+		System.out.println(randomList);
+
+		System.out.println("\nAverage: " + (float)sum/MAX_RANDOM);
 	}
-
-	/*
-	 * LinkedList<Integer> myList = new LinkedList<Integer>();
-
-   Random rand = new Random();
-
-   int randnum;
-
-   int sum = 0;
-
-   for(int i = 0;i<25;i++)     {
-
-       randnum = rand.nextInt(101);
-
-       myList.add(new Integer(randnum));    
-
-       sum+=randnum;
-
-   }
-
-   Collections.sort(myList);
-
-   System.out.println(myList);
-
-   System.out.println("Average: "+(float)sum/25);
-	 */
 }
