@@ -1,3 +1,12 @@
+/**********************************************
+Workshop #9
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-12-01
+**********************************************/
 package task1;
 
 public class TestMultiplication {
@@ -36,7 +45,7 @@ public class TestMultiplication {
 		
 		// sequential method
 		System.out.println("\nStarting Sequential Method!");
-		MatrixMultiplication.sequentialAddMatrix(a, b);
+		MatrixMultiplication.sequentialMultiplyMatrix(a, b);
 		stopTime = System.currentTimeMillis();
 		System.out.println("The execution time for adding the matrices together using sequential call: " + (stopTime-beginTime) + " milliseconds");
 	}

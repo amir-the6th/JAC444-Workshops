@@ -1,3 +1,12 @@
+/**********************************************
+Workshop #9
+Course:JAC444 - Fall 2021
+Name: Amirhossein Sabagh
+ID:152956199
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Date:2021-12-01
+**********************************************/
 package task1;
 
 public class MatrixMultiplication implements Runnable {
@@ -15,10 +24,10 @@ public class MatrixMultiplication implements Runnable {
 
 	@Override
 	public void run() {
-		result = parallelAddMatrix(a, b);
+		result = parallelMultiplyMatrix(a, b);
 	}
 	
-	public static double[][] parallelAddMatrix(double[][] a, double[][] b) {
+	public static double[][] parallelMultiplyMatrix(double[][] a, double[][] b) {
         result = new double[a.length][b.length];
         for(int i = startPoint; i < endPoint; i++)
             for(int j = 0; j < a[i].length; j++)
@@ -26,7 +35,7 @@ public class MatrixMultiplication implements Runnable {
         return result;
     }
 	
-    public static double[][] sequentialAddMatrix(double[][] c, double[][] d) {
+    public static double[][] sequentialMultiplyMatrix(double[][] c, double[][] d) {
         result = new double[c.length][d.length];
         for(int i = 0; i < c.length; ++i)
             for(int j = 0; j < d.length; ++j)
